@@ -30,7 +30,11 @@
     </fragment>
     <fragment
         android:id="@+id/thirdFragment"
-        android:name="com.example.lifecycle.ThirdFragment"
-        android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        android:name="com.example.lifecycle.presentation.ThirdFragment"
+        android:label="Editar incremento"
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/action_thirdFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
 </navigation>

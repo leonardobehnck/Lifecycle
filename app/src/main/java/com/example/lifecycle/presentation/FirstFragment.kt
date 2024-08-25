@@ -1,6 +1,7 @@
 package com.example.lifecycle.presentation
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -46,8 +47,7 @@ class FirstFragment : Fragment() {
     binding.edit.setOnClickListener {
       findNavController().navigate(R.id.action_FirstFragment_to_thirdFragment)
     }
-
-  //counter()
+    counter()
   }
 
   override fun onDestroyView() {
@@ -55,13 +55,13 @@ class FirstFragment : Fragment() {
     _binding = null
   }
 
-  private fun counter() {
+  fun counter() {
     //Sempre quando é alterado o observe atualiza o campo
     viewModel.counter.observe(viewLifecycleOwner) {
       binding.counter.text = it.toString()
     }
 
-    binding.fab.setOnClickListener() {
+    binding.add.setOnClickListener() {
       viewModel.increment()
     }
   }
