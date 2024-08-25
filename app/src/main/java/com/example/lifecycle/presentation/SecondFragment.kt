@@ -16,7 +16,9 @@ import com.example.lifecycle.presentation.counter.MainViewModel
  */
 class SecondFragment : Fragment() {
 
-  private val viewModel by activityViewModels<MainViewModel>()
+  private val viewModel by activityViewModels<MainViewModel>() {
+    ViewModelFactory()
+  }
 
   private var _binding: FragmentSecondBinding? = null
 

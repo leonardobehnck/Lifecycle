@@ -15,7 +15,9 @@ class ThirdFragment : Fragment() {
   private var _binding: FragmentThirdBinding? = null
   private val binding get() = _binding!!
 
-  private val viewModel by activityViewModels<MainViewModel>()
+  private val viewModel by activityViewModels<MainViewModel>() {
+    ViewModelFactory()
+  }
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)

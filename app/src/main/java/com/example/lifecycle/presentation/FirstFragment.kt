@@ -20,7 +20,9 @@ class FirstFragment : Fragment() {
 
   private var _binding: FragmentFirstBinding? = null
 
-  private val viewModel by activityViewModels<MainViewModel>()
+  private val viewModel by activityViewModels<MainViewModel>() {
+    ViewModelFactory()
+  }
 
 
   // This property is only valid between onCreateView and

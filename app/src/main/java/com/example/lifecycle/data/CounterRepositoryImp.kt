@@ -2,13 +2,14 @@ package com.example.lifecycle.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.lifecycle.domain.CounterRepository
 
-class  CounterRepository {
+class  CounterRepositoryImp : CounterRepository {
   private val counter = MutableLiveData(0)
 
-  fun getCounter(): LiveData<Int> = counter
+  override fun getCounter(): LiveData<Int> = counter
 
-  fun incrementCounterBy(increment: Int) {
+  override fun incrementCounterBy(increment: Int) {
     val number = counter.value ?: 0
     counter.value = number + increment
   }
